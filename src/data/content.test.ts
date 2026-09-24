@@ -77,7 +77,11 @@ describe('Datebook (AI-assisted work tool)', () => {
     expect(roles.join(' ')).toMatch(/built the windows installer/i);
   });
 
-  it('has no download or live link until a release is published', () => {
+  it('offers the published Windows release, not a live web demo', () => {
     expect(datebook?.live).toBeUndefined();
+    expect(datebook?.download).toEqual({
+      href: 'https://github.com/JerrickJohnson/Date_Calculator/releases/latest',
+      label: 'Download for Windows',
+    });
   });
 });

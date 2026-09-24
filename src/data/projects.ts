@@ -100,6 +100,7 @@ export const projects: Project[] = [
       height: 1005,
     },
     repo: `${gh}/Date_Calculator`,
+    download: { href: `${gh}/Date_Calculator/releases/latest`, label: 'Download for Windows' },
     size: 'spotlight',
   },
   {

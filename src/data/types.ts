@@ -9,6 +9,8 @@ export interface Project {
   demonstrates: string[];
   repo: string;
   live?: string;
+  /** A published desktop build, e.g. a GitHub release. */
+  download?: { href: string; label: string };
   team?: string;
   size: 'featured' | 'spotlight' | 'wide' | 'pair' | 'compact';
   /** Built with an AI assistant; credited on the card. */

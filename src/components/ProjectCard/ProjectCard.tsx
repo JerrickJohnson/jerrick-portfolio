@@ -75,6 +75,17 @@ export function ProjectCard({ project }: { project: Project }) {
         <a href={project.repo} target="_blank" rel="noopener noreferrer" aria-label={`${project.name} source on GitHub`}>
           GitHub <ArrowIcon direction="up-right" />
         </a>
+        {project.download && (
+          <a
+            href={project.download.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Download ${project.name} for Windows`}
+            className={styles.live}
+          >
+            {project.download.label} <ArrowIcon direction="down" />
+          </a>
+        )}
         {project.live && (
           <a
             href={project.live}

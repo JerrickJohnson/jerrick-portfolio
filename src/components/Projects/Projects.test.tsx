@@ -47,3 +47,10 @@ it('spotlights Datebook with an AI badge, a how-it-was-built panel, and an ancho
   expect(screen.getByRole('heading', { name: /how i built it with ai/i })).toBeInTheDocument();
   expect(screen.getByRole('img', { name: /datebook/i })).toHaveAttribute('src', expect.stringContaining('projects/datebook.webp'));
 });
+
+it('links Datebook to its Windows release', () => {
+  render(<Projects />);
+  const dl = screen.getByRole('link', { name: /download datebook for windows/i });
+  expect(dl).toHaveAttribute('href', 'https://github.com/JerrickJohnson/Date_Calculator/releases/latest');
+  expect(dl).toHaveAttribute('rel', 'noopener noreferrer');
+});
