@@ -1,0 +1,157 @@
+.titleAccent {
+  display: block;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.timeline {
+  --rail-x: 11px;
+  position: relative;
+  display: grid;
+  gap: 18px;
+  padding-left: 44px;
+}
+
+/* Track */
+.timeline::before,
+.timeline::after {
+  content: '';
+  position: absolute;
+  left: var(--rail-x);
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 2px;
+}
+
+.timeline::before {
+  background: var(--line-strong);
+}
+
+/* Fill: amber at the start of the career, cyan by today */
+.timeline::after {
+  background: var(--grad-v);
+  transform-origin: top;
+  transform: scaleY(var(--progress, 0));
+  transition: transform 0.12s linear;
+}
+
+.stage {
+  position: relative;
+}
+
+.marker {
+  position: absolute;
+  left: calc(var(--rail-x) - 44px - 6px + 1px);
+  top: 30px;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--muted);
+}
+
+.stage[data-tone='amber'] .marker {
+  border-color: var(--amber);
+}
+
+.stage[data-tone='cyan'] .marker {
+  border-color: var(--cyan);
+}
+
+.stage[data-tone='blend'] .marker {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    var(--grad) border-box;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 16px 32px;
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.stage:hover .card {
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stageNo {
+  color: var(--text-2);
+}
+
+.era {
+  color: var(--muted);
+}
+
+.stage[data-tone='amber'] .era {
+  color: var(--amber);
+}
+
+.stage[data-tone='cyan'] .era {
+  color: var(--cyan);
+}
+
+.stage[data-tone='blend'] .era {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.content {
+  display: grid;
+  gap: 12px;
+}
+
+.stageTitle {
+  font-size: var(--step-2);
+}
+
+.caption {
+  color: var(--text-2);
+  max-width: 64ch;
+}
+
+@media (max-width: 720px) {
+  .timeline {
+    --rail-x: 5px;
+    padding-left: 26px;
+    gap: 14px;
+  }
+
+  .marker {
+    left: calc(var(--rail-x) - 26px - 6px + 1px);
+    top: 26px;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .meta {
+    flex-direction: row;
+    gap: 12px;
+  }
+}
