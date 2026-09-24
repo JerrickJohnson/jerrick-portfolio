@@ -1,0 +1,41 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #090c12;
+  --surface: #0d1119;
+  --surface-2: #121826;
+  --surface-3: #171e2e;
+  --line: rgba(255, 255, 255, 0.07);
+  --line-strong: rgba(255, 255, 255, 0.13);
+
+  --text: #e9ecf3;
+  --text-2: #b7bfcf;
+  --muted: #8a93a6;
+
+  /* Amber = enterprise / IBM i. Cyan = modern web. The gradient only where they meet. */
+  --amber: #f0a44b;
+  --amber-soft: rgba(240, 164, 75, 0.12);
+  --amber-line: rgba(240, 164, 75, 0.35);
+  --cyan: #4cc9f0;
+  --cyan-soft: rgba(76, 201, 240, 0.12);
+  --cyan-line: rgba(76, 201, 240, 0.35);
+  --grad: linear-gradient(90deg, var(--amber), var(--cyan));
+  --grad-v: linear-gradient(180deg, var(--amber), var(--cyan));
+
+  --font-sans: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.88rem);
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.075rem);
+  --step-1: clamp(1.15rem, 1.08rem + 0.35vw, 1.35rem);
+  --step-2: clamp(1.4rem, 1.25rem + 0.7vw, 1.85rem);
+  --step-3: clamp(1.8rem, 1.5rem + 1.5vw, 2.8rem);
+  --step-4: clamp(2.3rem, 1.7rem + 3vw, 4.4rem);
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --nav-h: 64px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --max: 1180px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
