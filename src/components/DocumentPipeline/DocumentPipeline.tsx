@@ -6,7 +6,7 @@ export function DocumentPipeline() {
   return (
     <div className={styles.wrap}>
       <Reveal className={styles.head}>
-        <p className={styles.kicker}>Differentiator</p>
+        <p className={styles.kicker}>Beyond application code</p>
         <h3 className={styles.title}>Enterprise Document Processing</h3>
         <p className={styles.intro}>{documentIntro}</p>
       </Reveal>

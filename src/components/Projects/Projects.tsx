@@ -13,7 +13,7 @@ export function Projects() {
     <Section
       id="projects"
       index="05"
-      label="Selected work"
+      label="Projects"
       title="Selected Work"
       intro="A selection of modern applications built while expanding my full-stack development experience."
     >

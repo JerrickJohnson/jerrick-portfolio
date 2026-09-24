@@ -60,46 +60,50 @@ export function Navigation() {
     };
   }, [open, close]);
 
+  // The panel is a sibling of the header, not a child: the header's backdrop-filter
+  // would otherwise become the containing block for the fixed panel and clip it.
   return (
-    <header className={`${styles.bar} ${scrolled || open ? styles.scrolled : ''}`}>
-      <nav aria-label="Primary" className={styles.inner}>
-        <a href="#home" className={styles.brand} aria-label={`${site.name}, back to top`}>
-          <span aria-hidden="true" className={styles.mark}>
-            <span className={styles.markA}>J</span>
-            <span className={styles.markC}>J</span>
-          </span>
-          <span className={styles.brandName}>{site.name}</span>
-        </a>
+    <>
+      <header className={`${styles.bar} ${scrolled || open ? styles.scrolled : ''}`}>
+        <nav aria-label="Primary" className={styles.inner}>
+          <a href="#home" className={styles.brand} aria-label={`${site.name}, back to top`}>
+            <span aria-hidden="true" className={styles.mark}>
+              <span className={styles.markA}>J</span>
+              <span className={styles.markC}>J</span>
+            </span>
+            <span className={styles.brandName}>{site.name}</span>
+          </a>
 
-        <ul className={styles.links}>
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <a
-                href={`#${item.id}`}
-                className={styles.link}
-                aria-current={active === item.id ? 'true' : undefined}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className={styles.links}>
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={styles.link}
+                  aria-current={active === item.id ? 'true' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <button
-          ref={toggleRef}
-          type="button"
-          className={styles.toggle}
-          aria-expanded={open}
-          aria-controls="site-menu"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className={styles.toggleLines} data-open={open} aria-hidden="true">
-            <span />
-            <span />
-          </span>
-        </button>
-      </nav>
+          <button
+            ref={toggleRef}
+            type="button"
+            className={styles.toggle}
+            aria-expanded={open}
+            aria-controls="site-menu"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className={styles.toggleLines} data-open={open} aria-hidden="true">
+              <span />
+              <span />
+            </span>
+          </button>
+        </nav>
+      </header>
 
       <div
         id="site-menu"
@@ -135,6 +139,6 @@ export function Navigation() {
           <a href={`mailto:${site.email}`}>Email</a>
         </div>
       </div>
-    </header>
+    </>
   );
 }

@@ -33,9 +33,9 @@
 /* Fill: amber at the start of the career, cyan by today */
 .timeline::after {
   background: var(--grad-v);
-  transform-origin: top;
-  transform: scaleY(var(--progress, 0));
-  transition: transform 0.12s linear;
+  /* Reveal a fixed gradient rather than squashing it, so amber stays with the early career */
+  clip-path: inset(0 0 calc((1 - var(--progress, 0)) * 100%) 0);
+  transition: clip-path 0.12s linear;
 }
 
 .stage {
