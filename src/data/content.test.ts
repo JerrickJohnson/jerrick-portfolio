@@ -53,3 +53,31 @@ it('role matches the resume', () => {
     'Printed insured documents',
   ]);
 });
+
+describe('Datebook (AI-assisted work tool)', () => {
+  const datebook = projects.find((p) => p.slug === 'datebook');
+
+  it('is the first project after the featured case study', () => {
+    expect(projects[0]?.slug).toBe('datebook');
+  });
+
+  it('credits the AI assistance and explains the work problem it solves', () => {
+    expect(datebook?.aiAssisted).toBe(true);
+    expect(datebook?.origin).toMatch(/testing/i);
+    expect(datebook?.origin).toMatch(/insured/i);
+    expect(datebook?.repo).toBe('https://github.com/JerrickJohnson/Date_Calculator');
+  });
+
+  it('claims only the four roles Jerrick confirmed', () => {
+    const roles = datebook?.howBuilt ?? [];
+    expect(roles).toHaveLength(5);
+    expect(roles.join(' ')).toMatch(/defined the features/i);
+    expect(roles.join(' ')).toMatch(/reviewed the code/i);
+    expect(roles.join(' ')).toMatch(/tested it against real date cycles/i);
+    expect(roles.join(' ')).toMatch(/built the windows installer/i);
+  });
+
+  it('has no download or live link until a release is published', () => {
+    expect(datebook?.live).toBeUndefined();
+  });
+});

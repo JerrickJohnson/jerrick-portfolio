@@ -22,7 +22,7 @@ export const stages: Stage[] = [
     title: 'Modern Development',
     caption:
       'Extending into the web stack: component-based interfaces, server-side JavaScript, and APIs that connect the client to the data.',
-    tags: ['JavaScript', 'HTML', 'CSS', 'React', 'Node.js', 'Express', 'GraphQL'],
+    tags: ['JavaScript', 'HTML', 'CSS', 'React', 'Node.js', 'Express', 'GraphQL', 'Electron'],
     tone: 'blend',
   },
   {
@@ -37,8 +37,8 @@ export const stages: Stage[] = [
     id: 'workflow',
     title: "Today's Workflow",
     caption:
-      'Version control, pull-request collaboration, and AI tools used deliberately for research, debugging, and exploring unfamiliar code.',
-    tags: ['Git', 'GitHub', 'VS Code', 'AI-Assisted Development'],
+      'Version control, pull-request collaboration, and AI tools like Claude used deliberately to plan, build, and verify real applications.',
+    tags: ['Git', 'GitHub', 'VS Code', 'AI-Assisted Development', 'Claude Code'],
     tone: 'cyan',
   },
 ];

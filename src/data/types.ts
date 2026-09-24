@@ -10,7 +10,22 @@ export interface Project {
   repo: string;
   live?: string;
   team?: string;
-  size: 'featured' | 'wide' | 'pair' | 'compact';
+  size: 'featured' | 'spotlight' | 'wide' | 'pair' | 'compact';
+  /** Built with an AI assistant; credited on the card. */
+  aiAssisted?: boolean;
+  /** Why it exists: the real problem it was built for. */
+  origin?: string;
+  /** What Jerrick personally did, as confirmed by him. */
+  howBuilt?: string[];
+  screenshot?: Screenshot;
+}
+
+export interface Screenshot {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
 }
 
 export interface FeaturedProject extends Project {
@@ -18,7 +33,7 @@ export interface FeaturedProject extends Project {
   features: string[];
   myRole: string[];
   architecture: { label: string; items: string[] }[];
-  screenshots: { src: string; alt: string; caption: string; width: number; height: number }[];
+  screenshots: Screenshot[];
 }
 
 export interface Stage {

@@ -11,8 +11,11 @@ import { AIWorkflow } from './components/AIWorkflow/AIWorkflow';
 import { ResumeCTA } from './components/ResumeCTA/ResumeCTA';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
+import { useInitialHashScroll } from './hooks/useInitialHashScroll';
 
 export default function App() {
+  useInitialHashScroll();
+
   return (
     <>
       <a href="#main" className="skip-link">

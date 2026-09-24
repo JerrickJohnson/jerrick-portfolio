@@ -1,4 +1,4 @@
-import { docPathSteps, documentIntro, documentNotes, printPipeline } from '../../data/experience';
+import { docPathSteps, documentIntro, documentNotes, printPipeline, toolingNote } from '../../data/experience';
 import { Reveal } from '../ui/Reveal';
 import styles from './DocumentPipeline.module.css';
 
@@ -45,6 +45,12 @@ export function DocumentPipeline() {
               <li key={n}>{n}</li>
             ))}
           </ul>
+          <p className={styles.tooling}>
+            {toolingNote.body}{' '}
+            <a href={toolingNote.href}>
+              {toolingNote.linkLabel} <span aria-hidden="true">↓</span>
+            </a>
+          </p>
         </Reveal>
       </div>
     </div>

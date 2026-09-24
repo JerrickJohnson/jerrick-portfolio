@@ -3,7 +3,7 @@ export type SectionId = 'home' | 'experience' | 'engineering' | 'projects' | 're
 export const site = {
   name: 'Jerrick Johnson',
   title: 'Software Engineer II',
-  positioning: ['Enterprise Software Engineer', 'IBM i', 'RPGLE', 'SQL', 'Full-Stack Development'],
+  positioning: ['Enterprise Software Engineer', 'IBM i', 'RPGLE', 'SQL', 'Full-Stack Development', 'AI-Assisted Development'],
   headline: 'From enterprise systems to modern applications.',
   summary:
     'Experienced software engineer specializing in IBM i, RPGLE, CL, SQL, enterprise application development, and document processing — with modern full-stack development experience across JavaScript, React, Node.js, GraphQL, MySQL, and MongoDB.',

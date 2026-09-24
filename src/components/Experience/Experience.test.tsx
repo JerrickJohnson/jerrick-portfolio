@@ -35,3 +35,8 @@ it('snapshot introduces the More Than One Stack story', () => {
   render(<EngineeringSnapshot />);
   expect(screen.getByRole('heading', { level: 2, name: /more than one stack/i })).toBeInTheDocument();
 });
+
+it('links the document-processing work to the Datebook tool', () => {
+  render(<Experience />);
+  expect(screen.getByRole('link', { name: /datebook/i })).toHaveAttribute('href', '#datebook');
+});

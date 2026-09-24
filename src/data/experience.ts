@@ -69,3 +69,9 @@ export const documentNotes = [
   'Develop and maintain the ALP print workflow using RPG O-specifications and printer files.',
   'Troubleshoot print output and formatting issues across the application, spooled-file, and print-processing workflow.',
 ];
+
+export const toolingNote = {
+  body: 'Testing date-driven processing cycles needs exact dates, so I built my own tool for it:',
+  linkLabel: 'Datebook, built with AI',
+  href: '#datebook',
+};

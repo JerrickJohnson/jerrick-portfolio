@@ -19,7 +19,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: 'Modern Web',
     tone: 'cyan',
-    items: ['JavaScript', 'HTML', 'CSS', 'React', 'Node.js', 'Express', 'GraphQL', 'Apollo', 'Handlebars'],
+    items: ['JavaScript', 'HTML', 'CSS', 'React', 'Node.js', 'Express', 'GraphQL', 'Apollo', 'Handlebars', 'Electron'],
   },
   {
     title: 'Databases',
@@ -29,6 +29,6 @@ export const skillGroups: SkillGroup[] = [
   {
     title: 'Development Workflow',
     tone: 'blend',
-    items: ['Git', 'GitHub', 'VS Code', 'API Integration', 'AI-Assisted Development'],
+    items: ['Git', 'GitHub', 'VS Code', 'API Integration', 'AI-Assisted Development', 'Claude / Claude Code'],
   },
 ];

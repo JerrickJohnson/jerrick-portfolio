@@ -25,10 +25,18 @@ it('states the engineering philosophy', () => {
   expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Different Technologies. Same Engineering Principles.');
 });
 
-it('frames AI as workflow, not AI/ML engineering', () => {
+it('frames AI as a building workflow, not AI/ML engineering', () => {
   render(<AIWorkflow />);
-  expect(screen.getByRole('heading', { level: 2, name: 'Modern Development Workflow' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 2, name: 'Building with AI' })).toBeInTheDocument();
+  expect(screen.getAllByRole('listitem').length).toBeGreaterThanOrEqual(5);
   expect(document.body.textContent).not.toMatch(/machine learning|ML engineer|AI engineer/i);
+});
+
+it('backs the AI workflow with two real examples', () => {
+  render(<AIWorkflow />);
+  expect(screen.getByRole('heading', { level: 3, name: 'Datebook' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 3, name: 'This portfolio' })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /see datebook/i })).toHaveAttribute('href', '#datebook');
 });
 
 it('resume CTA downloads the PDF from the base-aware url', () => {

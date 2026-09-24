@@ -38,3 +38,12 @@ it('answers what / built with / demonstrates for each project', () => {
   render(<Projects />);
   expect(screen.getAllByText(/^Demonstrates$/)).toHaveLength(1 + projects.length);
 });
+
+it('spotlights Datebook with an AI badge, a how-it-was-built panel, and an anchor', () => {
+  render(<Projects />);
+  const card = document.getElementById('datebook');
+  expect(card?.tagName).toBe('ARTICLE');
+  expect(card).toHaveTextContent(/built with AI/i);
+  expect(screen.getByRole('heading', { name: /how i built it with ai/i })).toBeInTheDocument();
+  expect(screen.getByRole('img', { name: /datebook/i })).toHaveAttribute('src', expect.stringContaining('projects/datebook.webp'));
+});

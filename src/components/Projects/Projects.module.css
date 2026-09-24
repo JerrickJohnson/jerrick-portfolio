@@ -5,7 +5,8 @@
   margin-top: 16px;
 }
 
-.wide {
+.wide,
+.spotlight {
   grid-column: 1 / -1;
 }
 

@@ -1,21 +1,44 @@
 import { aiWorkflow } from '../../data/story';
 import { Reveal } from '../ui/Reveal';
 import { Section } from '../ui/Section';
+import { TagList } from '../ui/Tag';
 import styles from './AIWorkflow.module.css';
 
 export function AIWorkflow() {
   return (
-    <Section id="workflow" tone="raised" index="08" label="AI-assisted development" title="Modern Development Workflow" intro={aiWorkflow.intro}>
-      <ul className={styles.grid}>
-        {aiWorkflow.uses.map((u, i) => (
-          <li key={u.title}>
-            <Reveal delay={(i % 3) * 60} className={styles.item}>
-              <h3 className={styles.title}>{u.title}</h3>
-              <p className={styles.body}>{u.body}</p>
+    <Section id="workflow" tone="raised" index="08" label="Modern development workflow" title="Building with AI" intro={aiWorkflow.intro}>
+      <ol className={styles.steps} aria-label="How I build with AI">
+        {aiWorkflow.steps.map((s, i) => (
+          <li key={s.title}>
+            <Reveal delay={i * 60} className={styles.step}>
+              <span className={styles.no}>{String(i + 1).padStart(2, '0')}</span>
+              <h3 className={styles.stepTitle}>{s.title}</h3>
+              <p className={styles.body}>{s.body}</p>
             </Reveal>
           </li>
         ))}
-      </ul>
+      </ol>
+
+      <p className={styles.examplesLabel}>In practice</p>
+      <div className={styles.examples}>
+        {aiWorkflow.examples.map((ex, i) => (
+          <Reveal key={ex.title} delay={i * 90} className={styles.example}>
+            <p className={styles.kind}>{ex.kind}</p>
+            <h3 className={styles.exampleTitle}>{ex.title}</h3>
+            <p className={styles.body}>{ex.body}</p>
+            {ex.href && (
+              <a href={ex.href} className={styles.exampleLink}>
+                {ex.linkLabel} <span aria-hidden="true">↑</span>
+              </a>
+            )}
+          </Reveal>
+        ))}
+      </div>
+
+      <div className={styles.also}>
+        <span className={styles.alsoLabel}>I also use AI for</span>
+        <TagList items={aiWorkflow.alsoFor} />
+      </div>
     </Section>
   );
 }

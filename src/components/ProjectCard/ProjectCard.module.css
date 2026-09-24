@@ -31,6 +31,28 @@
   color: var(--text-2);
 }
 
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* AI credit: the amber→cyan gradient marks where the two worlds meet */
+.ai {
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text);
+  white-space: nowrap;
+  background:
+    linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+    var(--grad) border-box;
+}
+
 .team {
   flex-shrink: 0;
   padding: 4px 10px;
@@ -139,6 +161,101 @@
 .card[data-size='wide'] .demo {
   grid-column: 2;
   grid-row: 1 / span 2;
+}
+
+/* Spotlight: story + facts on the left, screenshot + how-it-was-built on the right */
+.card[data-size='spotlight'] {
+  border-color: var(--line-strong);
+  background:
+    radial-gradient(520px 260px at 100% 0%, rgba(76, 201, 240, 0.07), transparent 70%),
+    radial-gradient(420px 240px at 0% 100%, rgba(240, 164, 75, 0.06), transparent 70%),
+    var(--surface);
+}
+
+.card[data-size='spotlight'] .body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px 40px;
+  align-items: start;
+}
+
+.origin dd {
+  padding-left: 14px;
+  border-left: 2px solid var(--amber);
+  color: var(--text) !important;
+}
+
+.aside {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.shot {
+  display: grid;
+  gap: 8px;
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  box-shadow: 0 30px 60px -36px rgba(0, 0, 0, 0.9);
+  background: var(--surface-2);
+}
+
+.shot figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.howBuilt {
+  padding: 20px;
+  border: 1px solid var(--cyan-line);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, rgba(76, 201, 240, 0.08), transparent 60%), rgba(9, 12, 18, 0.6);
+}
+
+.howBuilt h4 {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.howBuilt ul {
+  display: grid;
+  gap: 9px;
+  font-size: 0.95rem;
+}
+
+.howBuilt li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.howBuilt li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+@media (max-width: 900px) {
+  .card[data-size='spotlight'] .body {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    margin-top: 0;
+  }
 }
 
 /* Compact: denser */

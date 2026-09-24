@@ -70,6 +70,39 @@ export const featured: FeaturedProject = {
 
 export const projects: Project[] = [
   {
+    slug: 'datebook',
+    name: 'Datebook',
+    tagline: 'A secure, offline Windows date calculator I built with AI for my own testing work.',
+    origin:
+      'Testing insurance print and transaction processing means working out exact dates for specific processing cycles, so the correct transactions are generated for insureds in test and development. I built Datebook with Claude to handle those calculations, and I use it in my own testing and development work.',
+    whatItIs:
+      'A Windows desktop app for adding or subtracting years, months, weeks, and days from a date, or measuring the gap between two dates, with business days, U.S. holidays (including observed dates), custom days off, and saved presets.',
+    builtWith: ['Electron', 'JavaScript', 'HTML', 'CSS', 'flatpickr', 'electron-builder', 'Claude'],
+    demonstrates: [
+      'Turning a real problem from my own work into a working tool',
+      'Date logic with real edge cases: month-end rollover, leap years, business days, observed holidays, and strict date validation',
+      'Electron security hardening: context isolation, sandboxing, a Content Security Policy that blocks all network access, and blocked navigation',
+      'Packaging a desktop app as a Windows installer with electron-builder',
+    ],
+    howBuilt: [
+      'Defined the features from what my testing work needed',
+      'Built it with Claude as an AI pair programmer',
+      'Reviewed the code, including the Electron security settings',
+      'Tested it against real date cycles from my work and had issues fixed',
+      'Built the Windows installer with electron-builder',
+    ],
+    aiAssisted: true,
+    screenshot: {
+      src: `${shots}datebook.webp`,
+      alt: 'Datebook adding 30 business days to September 24, 2026, with the result November 5, 2026 and weekends skipped',
+      caption: '30 business days from a start date, weekends skipped',
+      width: 1400,
+      height: 1005,
+    },
+    repo: `${gh}/Date_Calculator`,
+    size: 'spotlight',
+  },
+  {
     slug: 'homeward',
     name: 'Homeward Bound',
     tagline: 'A lost-and-found pet board with image uploads.',

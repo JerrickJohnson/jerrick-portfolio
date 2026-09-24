@@ -63,7 +63,8 @@ button {
 }
 
 /* Deep links (/#projects) must clear the sticky nav */
-section[id] {
+section[id],
+article[id] {
   scroll-margin-top: calc(var(--nav-h) + 16px);
 }
 
