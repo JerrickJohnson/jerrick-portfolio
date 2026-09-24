@@ -1,7 +1,7 @@
 import type { FeaturedProject, Project } from './types';
 
 const gh = 'https://github.com/JerrickJohnson';
-const shots = 'https://github.com/JerrickJohnson/Premier_Neighborhood_Services/assets/112597870';
+const shots = `${import.meta.env.BASE_URL}projects/`;
 
 export const featured: FeaturedProject = {
   slug: 'premier',
@@ -39,10 +39,29 @@ export const featured: FeaturedProject = {
     'Authentication and user-owned data, with listings tied to their seller',
     'Team development on a shared repository with branches and pull requests',
   ],
+  // Optimized copies of the screenshots in the project README
   screenshots: [
-    { src: `${shots}/acb2bb89-2c66-4d4f-9b10-545e4220bd30`, alt: 'Premier Neighborhood Services application screen' },
-    { src: `${shots}/2c7f376c-45d5-46b8-85ae-11ab49dfae88`, alt: 'Premier Neighborhood Services application screen' },
-    { src: `${shots}/95b34785-bf46-4faf-bc78-322b78805356`, alt: 'Premier Neighborhood Services application screen' },
+    {
+      src: `${shots}premier-marketplace.webp`,
+      alt: 'Marketplace page: posted items in a card grid with prices and Make Offer buttons, category filters above, and a Post Item button',
+      caption: 'Marketplace, the part of the app I built',
+      width: 1400,
+      height: 650,
+    },
+    {
+      src: `${shots}premier-home.webp`,
+      alt: 'Home page with navigation for Messages, Marketplace, Events, Services, and Payments above a community photo carousel',
+      caption: 'Home and navigation',
+      width: 1400,
+      height: 699,
+    },
+    {
+      src: `${shots}premier-mobile.webp`,
+      alt: 'Narrow-screen layout with collapsed navigation and an amenities carousel',
+      caption: 'Responsive layout',
+      width: 800,
+      height: 682,
+    },
   ],
   repo: `${gh}/Premier_Neighborhood_Services`,
   team: 'Team of 5',

@@ -18,7 +18,7 @@ export interface FeaturedProject extends Project {
   features: string[];
   myRole: string[];
   architecture: { label: string; items: string[] }[];
-  screenshots: { src: string; alt: string }[];
+  screenshots: { src: string; alt: string; caption: string; width: number; height: number }[];
 }
 
 export interface Stage {
