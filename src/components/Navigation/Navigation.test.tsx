@@ -23,7 +23,7 @@ it('mobile menu closes when a link is chosen', () => {
   render(<Navigation />);
   const btn = screen.getByRole('button', { name: /menu/i });
   fireEvent.click(btn);
-  const menu = screen.getByRole('dialog', { name: /site menu/i });
+  const menu = screen.getByRole('navigation', { name: /site menu/i });
   fireEvent.click(menu.querySelector('a[href="#projects"]')!);
   expect(btn).toHaveAttribute('aria-expanded', 'false');
   expect(document.body.style.overflow).toBe('');
@@ -34,4 +34,12 @@ it('renders every nav destination as an in-page link', () => {
   const nav = screen.getByRole('navigation', { name: /primary/i });
   const hrefs = Array.from(nav.querySelectorAll('a[href^="#"]')).map((a) => a.getAttribute('href'));
   expect(hrefs).toEqual(expect.arrayContaining(['#home', '#experience', '#engineering', '#projects', '#resume', '#contact']));
+});
+
+it('mobile menu is a disclosure, not a modal that hides its own close button', () => {
+  render(<Navigation />);
+  fireEvent.click(screen.getByRole('button', { name: /menu/i }));
+  expect(screen.queryByRole('dialog')).toBeNull();
+  expect(document.querySelector('[aria-modal="true"]')).toBeNull();
+  expect(screen.getByRole('button', { name: /close menu/i })).toBeVisible();
 });

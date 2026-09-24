@@ -10,7 +10,7 @@ export function Navigation() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
 
   const close = useCallback((restoreFocus = true) => {
     setOpen(false);
@@ -105,11 +105,9 @@ export function Navigation() {
         </nav>
       </header>
 
-      <div
+      <nav
         id="site-menu"
         ref={panelRef}
-        role="dialog"
-        aria-modal="true"
         aria-label="Site menu"
         className={styles.panel}
         data-open={open}
@@ -138,7 +136,7 @@ export function Navigation() {
           </a>
           <a href={`mailto:${site.email}`}>Email</a>
         </div>
-      </div>
+      </nav>
     </>
   );
 }

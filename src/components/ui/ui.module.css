@@ -180,3 +180,11 @@
   opacity: 0;
   transform: translateY(18px);
 }
+
+/* Printing or "Save as PDF" must include sections the reader never scrolled to */
+@media print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
