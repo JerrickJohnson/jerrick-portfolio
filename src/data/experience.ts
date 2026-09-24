@@ -59,7 +59,7 @@ export const printPipeline: PipelineStep[] = [
 ];
 
 export const docPathSteps: PipelineStep[] = [
-  { label: 'Import forms', detail: 'Bring forms into DocPath Designer.' },
+  { label: 'Import forms', detail: 'Bring existing forms into DocPath.' },
   { label: 'Edit layouts', detail: 'Adjust form layout and formatting.' },
   { label: 'Add fields', detail: 'Define the data fields each form needs.' },
   { label: 'Integrate with RPGLE', detail: 'RPGLE programs supply the data that populates each form.' },
