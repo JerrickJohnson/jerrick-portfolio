@@ -37,6 +37,9 @@ it('backs the AI workflow with two real examples', () => {
   expect(screen.getByRole('heading', { level: 3, name: 'Datebook' })).toBeInTheDocument();
   expect(screen.getByRole('heading', { level: 3, name: 'This portfolio' })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: /see datebook/i })).toHaveAttribute('href', '#datebook');
+  const source = screen.getByRole('link', { name: /source and history/i });
+  expect(source).toHaveAttribute('href', 'https://github.com/JerrickJohnson/jerrick-portfolio');
+  expect(source).toHaveAttribute('rel', 'noopener noreferrer');
 });
 
 it('resume CTA downloads the PDF from the base-aware url', () => {

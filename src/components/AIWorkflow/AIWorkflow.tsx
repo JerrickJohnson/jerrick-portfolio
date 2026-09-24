@@ -26,11 +26,16 @@ export function AIWorkflow() {
             <p className={styles.kind}>{ex.kind}</p>
             <h3 className={styles.exampleTitle}>{ex.title}</h3>
             <p className={styles.body}>{ex.body}</p>
-            {ex.href && (
-              <a href={ex.href} className={styles.exampleLink}>
-                {ex.linkLabel} <span aria-hidden="true">↑</span>
-              </a>
-            )}
+            {ex.href &&
+              (ex.href.startsWith('http') ? (
+                <a href={ex.href} className={styles.exampleLink} target="_blank" rel="noopener noreferrer">
+                  {ex.linkLabel} <span aria-hidden="true">↗</span>
+                </a>
+              ) : (
+                <a href={ex.href} className={styles.exampleLink}>
+                  {ex.linkLabel} <span aria-hidden="true">↑</span>
+                </a>
+              ))}
           </Reveal>
         ))}
       </div>

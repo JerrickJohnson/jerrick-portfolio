@@ -60,6 +60,8 @@ export const aiWorkflow = {
       title: 'This portfolio',
       kind: 'Web app · React + TypeScript',
       body: 'Built with Claude Code. I wrote the brief, supplied and checked every fact, and approved the design, spec, and plan. It shipped with automated tests, an independent AI code review, and fixes found by checking it in the browser.',
+      href: 'https://github.com/JerrickJohnson/jerrick-portfolio',
+      linkLabel: 'View the source and history',
     },
   ] as { title: string; kind: string; body: string; href?: string; linkLabel?: string }[],
   alsoFor: ['Research', 'Learning new technologies', 'Debugging', 'Code exploration', 'Problem solving'],

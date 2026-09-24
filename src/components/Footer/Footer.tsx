@@ -18,6 +18,9 @@ export function Footer() {
           <a href={site.resumeUrl} target="_blank" rel="noopener noreferrer">
             Resume
           </a>
+          <a href={site.sourceRepo} target="_blank" rel="noopener noreferrer">
+            Site source
+          </a>
           <a href="#home">Back to top ↑</a>
         </nav>
       </div>

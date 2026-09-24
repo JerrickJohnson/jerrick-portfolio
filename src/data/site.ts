@@ -10,6 +10,7 @@ export const site = {
   email: 'jerrickjohnson88@gmail.com',
   github: 'https://github.com/JerrickJohnson',
   linkedin: 'https://www.linkedin.com/in/jerrick-johnson-6bbbba182/',
+  sourceRepo: 'https://github.com/JerrickJohnson/jerrick-portfolio',
   resumeUrl: `${import.meta.env.BASE_URL}Jerrick_Johnson_Resume.pdf`,
 };
 
