@@ -3,14 +3,15 @@ import { ArrowIcon } from '../ui/Button';
 import { TagList } from '../ui/Tag';
 import styles from './ProjectCard.module.css';
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, headingLevel = 3 }: { project: Project; headingLevel?: 3 | 4 }) {
   const shot = project.screenshot;
+  const Title = `h${headingLevel}` as const;
 
   return (
     <article id={project.slug} className={styles.card} data-size={project.size}>
       <header className={styles.head}>
         <div>
-          <h3 className={styles.name}>{project.name}</h3>
+          <Title className={styles.name}>{project.name}</Title>
           <p className={styles.tagline}>{project.tagline}</p>
         </div>
         <div className={styles.badges}>

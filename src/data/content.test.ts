@@ -85,3 +85,10 @@ describe('Datebook (AI-assisted work tool)', () => {
     });
   });
 });
+
+it('includes the PWA text editor as additional work, without a dead demo link', () => {
+  const pwa = projects.find((p) => p.slug === 'jate');
+  expect(pwa?.size).toBe('compact');
+  expect(pwa?.live).toBeUndefined();
+  expect(pwa?.builtWith).toEqual(expect.arrayContaining(['IndexedDB', 'Workbox', 'webpack']));
+});

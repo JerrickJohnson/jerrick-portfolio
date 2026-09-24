@@ -14,6 +14,9 @@ export function useActiveSection(ids: string[]): string {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= line) current = id;
       }
+      // On tall screens the last sections are too short to reach the line
+      const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      if (atBottom && ids.length) current = ids[ids.length - 1]!;
       setActive(current);
     };
     const onScroll = () => {

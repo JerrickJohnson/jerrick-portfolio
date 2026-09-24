@@ -88,14 +88,14 @@
 
 .nodeLayer {
   font-family: var(--font-mono);
-  font-size: 8.5px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   fill: var(--muted);
 }
 
 .nodeLabel {
   font-family: var(--font-sans);
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 500;
   fill: var(--text);
 }

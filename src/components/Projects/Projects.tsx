@@ -32,7 +32,7 @@ export function Projects() {
         <div className={styles.compactGrid}>
           {additional.map((p, i) => (
             <Reveal key={p.slug} delay={i * 90}>
-              <ProjectCard project={p} />
+              <ProjectCard project={p} headingLevel={4} />
             </Reveal>
           ))}
         </div>

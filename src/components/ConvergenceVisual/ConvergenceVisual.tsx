@@ -181,10 +181,10 @@ function NodeBox({ x, y, node, tone, active, onEnter, onLeave }: NodeBoxProps) {
     >
       <rect width={NODE_W} height={NODE_H} rx={10} className={styles.nodeBox} />
       <rect width={3} height={NODE_H - 24} x={0} y={12} rx={1.5} className={styles.nodeTick} />
-      <text x={14} y={20} className={styles.nodeLayer}>
+      <text x={14} y={21} className={styles.nodeLayer}>
         {node.layer.toUpperCase()}
       </text>
-      <text x={14} y={38} className={styles.nodeLabel}>
+      <text x={14} y={40} className={styles.nodeLabel}>
         {node.label}
       </text>
     </g>

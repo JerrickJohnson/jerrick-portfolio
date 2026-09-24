@@ -154,6 +154,21 @@ export const projects: Project[] = [
     size: 'pair',
   },
   {
+    slug: 'jate',
+    name: 'JATE Text Editor',
+    tagline: 'An installable text editor that works offline.',
+    whatItIs:
+      'A single-page text editor that runs in the browser, installs like an app, and keeps working offline, saving your text to IndexedDB with localStorage as a fallback.',
+    builtWith: ['JavaScript', 'CodeMirror', 'IndexedDB', 'Workbox', 'webpack', 'Babel', 'Express'],
+    demonstrates: [
+      'Progressive web app: web app manifest, install prompt, and a Workbox service worker',
+      'Offline support with precaching and cache-first page caching',
+      'Client-side persistence with IndexedDB and a localStorage fallback',
+    ],
+    repo: `${gh}/Progressive-Web-Applications-PWA-Text-Editor`,
+    size: 'compact',
+  },
+  {
     slug: 'techblog',
     name: 'Tech Blog',
     tagline: 'A CMS-style blog for developers.',

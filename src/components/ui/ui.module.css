@@ -170,15 +170,23 @@
 }
 
 /* Reveal */
-.reveal {
-  transition:
-    opacity 0.7s var(--ease) var(--delay, 0ms),
-    transform 0.7s var(--ease) var(--delay, 0ms);
-}
-
+/* An animation, not a transition: components set their own hover transitions on
+   the same element, which would replace a transition-based reveal. 'backwards'
+   holds the start state during the delay, then releases so hover effects work. */
 .reveal[data-visible='false'] {
   opacity: 0;
   transform: translateY(18px);
+}
+
+.reveal[data-visible='true'] {
+  animation: reveal 0.7s var(--ease) var(--delay, 0ms) backwards;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
 }
 
 /* Printing or "Save as PDF" must include sections the reader never scrolled to */

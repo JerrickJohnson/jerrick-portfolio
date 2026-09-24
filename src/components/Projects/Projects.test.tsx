@@ -54,3 +54,11 @@ it('links Datebook to its Windows release', () => {
   expect(dl).toHaveAttribute('href', 'https://github.com/JerrickJohnson/Date_Calculator/releases/latest');
   expect(dl).toHaveAttribute('rel', 'noopener noreferrer');
 });
+
+it('nests additional-work card titles under their h3', () => {
+  render(<Projects />);
+  for (const name of ['Tech Blog', 'NoSQL Social Network API', 'JATE Text Editor']) {
+    expect(screen.getByRole('heading', { level: 4, name })).toBeInTheDocument();
+  }
+  expect(screen.getByRole('heading', { level: 3, name: 'Additional work' })).toBeInTheDocument();
+});
